@@ -312,20 +312,9 @@ set(LLVM_INCLUDE_DIR ${CMAKE_CURRENT_BINARY_DIR}/include)
 
 # List of all targets to be built by default:
 set(LLVM_ALL_TARGETS
-  AArch64
-  AMDGPU
   ARM
   BPF
-  Hexagon
-  Lanai
-  Mips
-  MSP430
-  NVPTX
-  PowerPC
-  Sparc
-  SystemZ
   X86
-  XCore
   )
 
 # List of targets with JIT support:
@@ -338,7 +327,7 @@ set(LLVM_EXPERIMENTAL_TARGETS_TO_BUILD ""
   CACHE STRING "Semicolon-separated list of experimental targets to build.")
 
 option(BUILD_SHARED_LIBS
-  "Build all libraries as shared libraries instead of static" OFF)
+  "Build all libraries as shared libraries instead of static" ON)
 
 option(LLVM_ENABLE_BACKTRACES "Enable embedding backtraces on crash." ON)
 if(LLVM_ENABLE_BACKTRACES)
