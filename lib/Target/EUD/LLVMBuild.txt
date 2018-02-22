@@ -1,4 +1,4 @@
-;===- ./lib/Target/EUD/TargetInfo/LLVMBuild.txt ----------------*- Conf -*--===;
+;===- ./lib/Target/EUD/LLVMBuild.txt ---------------------------*- Conf -*--===;
 ;
 ;                     The LLVM Compiler Infrastructure
 ;
@@ -15,9 +15,29 @@
 ;
 ;===------------------------------------------------------------------------===;
 
+[common]
+subdirectories = AsmParser InstPrinter Disassembler MCTargetDesc TargetInfo
+
 [component_0]
+type = TargetGroup
+name = EUD
+parent = Target
+has_asmprinter = 1
+has_disassembler = 1
+
+[component_1]
 type = Library
-name = EUDInfo
+name = EUDCodeGen
 parent = EUD
-required_libraries = Support
+required_libraries =
+ AsmPrinter
+ CodeGen
+ Core
+ MC
+ EUDAsmPrinter
+ EUDDesc
+ EUDInfo
+ SelectionDAG
+ Support
+ Target
 add_to_library_groups = EUD

@@ -90,3 +90,6 @@ bindings/go/llvm/workdir
 .idea/**/sqlDataSources.xml
 .idea/**/dynamic.xml
 .idea/**/uiDesigner.xml
+
+cmake-build-debug/
+cmake-build-release/

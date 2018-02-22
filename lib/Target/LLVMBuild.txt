@@ -21,6 +21,7 @@
 subdirectories =
  ARM
  BPF
+ EUD
  X86
 
 ; This is a special group whose required libraries are extended (by llvm-build)

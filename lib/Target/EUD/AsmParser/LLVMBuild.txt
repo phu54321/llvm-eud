@@ -1,4 +1,4 @@
-;===- ./lib/Target/EUD/TargetInfo/LLVMBuild.txt ----------------*- Conf -*--===;
+;===- ./lib/Target/EUD/AsmParser/LLVMBuild.txt ---------------*- Conf -*--===;
 ;
 ;                     The LLVM Compiler Infrastructure
 ;
@@ -17,7 +17,7 @@
 
 [component_0]
 type = Library
-name = EUDInfo
+name = EUDAsmParser
 parent = EUD
-required_libraries = Support
+required_libraries = MC MCParser EUDDesc EUDInfo Support
 add_to_library_groups = EUD
