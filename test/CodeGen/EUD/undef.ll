@@ -1,4 +1,4 @@
-; RUN: llc < %s -march=eudel | FileCheck -check-prefixes=CHECK,EL %s
+; RUN: llc < %s -march=eud | FileCheck -check-prefixes=CHECK,EL %s
 
 %struct.eud_map_def = type { i32, i32, i32, i32 }
 %struct.__sk_buff = type opaque

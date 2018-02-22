@@ -35,21 +35,14 @@ class raw_ostream;
 class raw_pwrite_stream;
 
 Target &getTheEUDleTarget();
-Target &getTheEUDbeTarget();
 
 MCCodeEmitter *createEUDMCCodeEmitter(const MCInstrInfo &MCII,
                                       const MCRegisterInfo &MRI,
                                       MCContext &Ctx);
-MCCodeEmitter *createEUDbeMCCodeEmitter(const MCInstrInfo &MCII,
-                                        const MCRegisterInfo &MRI,
-                                        MCContext &Ctx);
 
 MCAsmBackend *createEUDAsmBackend(const Target &T, const MCSubtargetInfo &STI,
                                   const MCRegisterInfo &MRI,
                                   const MCTargetOptions &Options);
-MCAsmBackend *createEUDbeAsmBackend(const Target &T, const MCSubtargetInfo &STI,
-                                    const MCRegisterInfo &MRI,
-                                    const MCTargetOptions &Options);
 
 std::unique_ptr<MCObjectWriter> createEUDELFObjectWriter(raw_pwrite_stream &OS,
                                                          uint8_t OSABI,

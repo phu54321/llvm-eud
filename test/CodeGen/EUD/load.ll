@@ -1,4 +1,4 @@
-; RUN: llc < %s -march=eudel | FileCheck %s
+; RUN: llc < %s -march=eud | FileCheck %s
 
 define i16 @am1(i16* %a) nounwind {
   %1 = load i16, i16* %a

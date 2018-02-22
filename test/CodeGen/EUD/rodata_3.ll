@@ -1,5 +1,5 @@
 ; REQUIRES: x86_64-linux
-; RUN: llc < %s -march=eudel -verify-machineinstrs | FileCheck --check-prefix=CHECK-EL %s
+; RUN: llc < %s -march=eud -verify-machineinstrs | FileCheck --check-prefix=CHECK-EL %s
 ;
 ; This test requires little-endian host, so we specific x86_64-linux here.
 ; Source code:

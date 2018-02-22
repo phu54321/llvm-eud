@@ -134,5 +134,4 @@ void EUDAsmPrinter::EmitInstruction(const MachineInstr *MI) {
 // Force static initialization.
 extern "C" void LLVMInitializeEUDAsmPrinter() {
   RegisterAsmPrinter<EUDAsmPrinter> X(getTheEUDleTarget());
-  RegisterAsmPrinter<EUDAsmPrinter> Y(getTheEUDbeTarget());
 }

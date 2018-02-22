@@ -16,15 +16,9 @@ Target &getTheEUDleTarget() {
   static Target TheEUDleTarget;
   return TheEUDleTarget;
 }
-Target &getTheEUDbeTarget() {
-  static Target TheEUDbeTarget;
-  return TheEUDbeTarget;
-}
 } // namespace llvm
 
 extern "C" void LLVMInitializeEUDTargetInfo() {
-  RegisterTarget<Triple::eudel, /*HasJIT=*/true> X(
-      getTheEUDleTarget(), "eudel", "EUD (little endian)", "EUD");
-  RegisterTarget<Triple::eudeb, /*HasJIT=*/true> Y(getTheEUDbeTarget(), "eudeb",
-                                                   "EUD (big endian)", "EUD");
+  RegisterTarget<Triple::eud, /*HasJIT=*/true> X(
+    getTheEUDleTarget(), "eud", "EUD (little endian)", "EUD");
 }

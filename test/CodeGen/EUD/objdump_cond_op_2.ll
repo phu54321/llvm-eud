@@ -1,4 +1,4 @@
-; RUN: llc -march=eudel -filetype=obj -o - %s | llvm-objdump -d - | FileCheck %s
+; RUN: llc -march=eud -filetype=obj -o - %s | llvm-objdump -d - | FileCheck %s
 
 ; Source Code:
 ; int test(int a, int b) {

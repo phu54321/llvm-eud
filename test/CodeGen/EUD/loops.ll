@@ -1,4 +1,4 @@
-; RUN: llc < %s -march=eudel | FileCheck %s
+; RUN: llc < %s -march=eud | FileCheck %s
 
 define zeroext i16 @add(i16* nocapture %a, i16 zeroext %n) nounwind readonly {
 entry:

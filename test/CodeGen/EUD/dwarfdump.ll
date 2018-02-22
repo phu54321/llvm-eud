@@ -1,4 +1,4 @@
-; RUN: llc -O2 -march=eudel %s -o %t -filetype=obj
+; RUN: llc -O2 -march=eud %s -o %t -filetype=obj
 ; RUN: llvm-dwarfdump -debug-line %t | FileCheck %s
 
 source_filename = "testprog.c"

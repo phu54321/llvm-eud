@@ -23,9 +23,6 @@ class Target;
 class EUDMCAsmInfo : public MCAsmInfo {
 public:
   explicit EUDMCAsmInfo(const Triple &TT) {
-    if (TT.getArch() == Triple::eudeb)
-      IsLittleEndian = false;
-
     PrivateGlobalPrefix = ".L";
     WeakRefDirective = "\t.weak\t";
 

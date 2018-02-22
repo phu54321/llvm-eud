@@ -1,4 +1,4 @@
-; RUN: llc < %s -march=eudel -verify-machineinstrs | FileCheck %s
+; RUN: llc < %s -march=eud -verify-machineinstrs | FileCheck %s
 
 ; Source code:
 ; struct test_t1

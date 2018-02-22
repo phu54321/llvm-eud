@@ -1,4 +1,4 @@
-; RUN: llc < %s -march=eudel -show-mc-encoding | FileCheck --check-prefix=CHECK-EL %s
+; RUN: llc < %s -march=eud -show-mc-encoding | FileCheck --check-prefix=CHECK-EL %s
 
 ; Function Attrs: nounwind uwtable
 define i32 @ld_b(i64 %foo, i64* nocapture %bar, i8* %ctx, i8* %ctx2) #0 {

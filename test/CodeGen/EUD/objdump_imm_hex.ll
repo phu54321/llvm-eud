@@ -1,5 +1,5 @@
-; RUN: llc -march=eudel -filetype=obj -o - %s | llvm-objdump -d - | FileCheck --check-prefix=CHECK-DEC %s
-; RUN: llc -march=eudel -filetype=obj -o - %s | llvm-objdump -d -print-imm-hex - | FileCheck --check-prefix=CHECK-HEX %s
+; RUN: llc -march=eud -filetype=obj -o - %s | llvm-objdump -d - | FileCheck --check-prefix=CHECK-DEC %s
+; RUN: llc -march=eud -filetype=obj -o - %s | llvm-objdump -d -print-imm-hex - | FileCheck --check-prefix=CHECK-HEX %s
 
 ; Source Code:
 ; int gbl;

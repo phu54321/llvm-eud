@@ -1,4 +1,4 @@
-; RUN: llc -march=eudel -filetype=obj -o - %s | llvm-objdump -d - | FileCheck %s
+; RUN: llc -march=eud -filetype=obj -o - %s | llvm-objdump -d - | FileCheck %s
 
 ; CHECK-LABEL: test_load_add_32
 ; CHECK: c3 21

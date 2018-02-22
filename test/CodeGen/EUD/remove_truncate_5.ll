@@ -1,4 +1,4 @@
-; RUN: llc < %s -march=eudel | FileCheck -check-prefixes=CHECK %s
+; RUN: llc < %s -march=eud | FileCheck -check-prefixes=CHECK %s
 
 ; Source code:
 ; struct test_t {

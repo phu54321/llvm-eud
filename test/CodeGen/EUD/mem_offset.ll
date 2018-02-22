@@ -1,4 +1,4 @@
-; RUN: llc -march=eudel -show-mc-encoding < %s | FileCheck %s
+; RUN: llc -march=eud -show-mc-encoding < %s | FileCheck %s
 
 ; Function Attrs: nounwind
 define i32 @eud_prog1(i8* nocapture readnone) local_unnamed_addr #0 {

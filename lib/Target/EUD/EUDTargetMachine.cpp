@@ -25,15 +25,11 @@ using namespace llvm;
 extern "C" void LLVMInitializeEUDTarget() {
   // Register the target.
   RegisterTargetMachine<EUDTargetMachine> X(getTheEUDleTarget());
-  RegisterTargetMachine<EUDTargetMachine> Y(getTheEUDbeTarget());
 }
 
 // DataLayout: little or big endian
 static std::string computeDataLayout(const Triple &TT) {
-  if (TT.getArch() == Triple::eudeb)
-    return "E-m:e-p:64:64-i64:64-n32:64-S128";
-  else
-    return "e-m:e-p:64:64-i64:64-n32:64-S128";
+  return "e-m:e-p:64:64-i64:64-n32:64-S128";
 }
 
 static Reloc::Model getEffectiveRelocModel(Optional<Reloc::Model> RM) {

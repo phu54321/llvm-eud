@@ -27,7 +27,7 @@ StringRef Triple::getArchTypeName(ArchType Kind) {
   case armeb:          return "armeb";
   case arc:            return "arc";
   case avr:            return "avr";
-  case eudel: return "eudel";
+  case eud: return "eud";
   case bpfel:          return "bpfel";
   case bpfeb:          return "bpfeb";
   case hexagon:        return "hexagon";
@@ -268,8 +268,7 @@ Triple::ArchType Triple::getArchTypeForLLVMName(StringRef Name) {
     .Case("armeb", armeb)
     .Case("avr", avr)
     .StartsWith("bpf", BPFArch)
-    .Case("eudel", eudel)
-    .Case("eudeb", eudeb)
+    .Case("eud", eud)
     .Case("mips", mips)
     .Case("mipsel", mipsel)
     .Case("mips64", mips64)
@@ -436,7 +435,7 @@ static Triple::ArchType parseArch(StringRef ArchName) {
     .Case("wasm64", Triple::wasm64)
     .Case("renderscript32", Triple::renderscript32)
     .Case("renderscript64", Triple::renderscript64)
-    .Case("eudel", Triple::eudel)
+    .Case("eud", Triple::eud)
     .Default(Triple::UnknownArch);
 
   // Some architectures require special parsing logic just to compute the
@@ -643,8 +642,7 @@ static Triple::ObjectFormatType getDefaultFormat(const Triple &T) {
   case Triple::avr:
   case Triple::bpfeb:
   case Triple::bpfel:
-  case Triple::eudel:
-  case Triple::eudeb:
+  case Triple::eud:
   case Triple::hexagon:
   case Triple::lanai:
   case Triple::hsail:
@@ -1220,7 +1218,7 @@ static unsigned getArchPointerBitWidth(llvm::Triple::ArchType Arch) {
   case llvm::Triple::shave:
   case llvm::Triple::wasm32:
   case llvm::Triple::renderscript32:
-  case llvm::Triple::eudel:return 32;
+  case llvm::Triple::eud:return 32;
 
   case llvm::Triple::aarch64:
   case llvm::Triple::aarch64_be:
@@ -1267,8 +1265,6 @@ Triple Triple::get32BitArchVariant() const {
   case Triple::avr:
   case Triple::bpfel:
   case Triple::bpfeb:
-  case Triple::eudel:
-  case Triple::eudeb:
   case Triple::msp430:
   case Triple::systemz:
   case Triple::ppc64le:T.setArch(UnknownArch);
@@ -1302,6 +1298,7 @@ Triple Triple::get32BitArchVariant() const {
   case Triple::shave:
   case Triple::wasm32:
   case Triple::renderscript32:
+  case Triple::eud:
     // Already 32-bit.
     break;
 
@@ -1341,7 +1338,7 @@ Triple Triple::get64BitArchVariant() const {
   case Triple::xcore:
   case Triple::sparcel:
   case Triple::shave:
-    T.setArch(UnknownArch);
+  case Triple::eud:T.setArch(UnknownArch);
     break;
 
   case Triple::aarch64:

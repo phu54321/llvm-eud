@@ -1,4 +1,4 @@
-; RUN: llc < %s -march=eudel -verify-machineinstrs -show-mc-encoding | FileCheck %s
+; RUN: llc < %s -march=eud -verify-machineinstrs -show-mc-encoding | FileCheck %s
 
 ; CHECK-LABEL: test_load_add_32
 ; CHECK: lock *(u32 *)(r1 + 0) += r2

@@ -58,8 +58,6 @@ extern "C" void LLVMInitializeEUDDisassembler() {
   // Register the disassembler.
   TargetRegistry::RegisterMCDisassembler(getTheEUDleTarget(),
                                          createEUDDisassembler);
-  TargetRegistry::RegisterMCDisassembler(getTheEUDbeTarget(),
-                                         createEUDDisassembler);
 }
 
 static const unsigned GPRDecoderTable[] = {

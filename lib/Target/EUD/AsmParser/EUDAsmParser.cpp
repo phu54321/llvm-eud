@@ -493,5 +493,4 @@ bool EUDAsmParser::ParseDirective(AsmToken DirectiveID) { return true; }
 
 extern "C" void LLVMInitializeEUDAsmParser() {
   RegisterMCAsmParser<EUDAsmParser> Y(getTheEUDleTarget());
-  RegisterMCAsmParser<EUDAsmParser> Z(getTheEUDbeTarget());
 }

@@ -109,10 +109,3 @@ MCAsmBackend *llvm::createEUDAsmBackend(const Target &T,
                                         const MCTargetOptions &) {
   return new EUDAsmBackend(/*IsLittleEndian=*/true);
 }
-
-MCAsmBackend *llvm::createEUDbeAsmBackend(const Target &T,
-                                          const MCSubtargetInfo &STI,
-                                          const MCRegisterInfo &MRI,
-                                          const MCTargetOptions &) {
-  return new EUDAsmBackend(/*IsLittleEndian=*/false);
-}

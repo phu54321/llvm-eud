@@ -1,4 +1,4 @@
-; RUN: llc < %s -march=eudel -show-mc-encoding | FileCheck %s
+; RUN: llc < %s -march=eud -show-mc-encoding | FileCheck %s
 
 %struct.eud_map_def = type { i32, i32, i32, i32 }
 %struct.sk_buff = type opaque

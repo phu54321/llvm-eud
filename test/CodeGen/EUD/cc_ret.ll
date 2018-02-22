@@ -1,4 +1,4 @@
-; RUN: llc < %s -march=eudel | FileCheck %s
+; RUN: llc < %s -march=eud | FileCheck %s
 
 define void @test() #0 {
 entry:

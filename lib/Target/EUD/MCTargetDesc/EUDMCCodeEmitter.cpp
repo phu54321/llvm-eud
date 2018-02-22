@@ -77,11 +77,6 @@ MCCodeEmitter *llvm::createEUDMCCodeEmitter(const MCInstrInfo &MCII,
   return new EUDMCCodeEmitter(MCII, MRI, true);
 }
 
-MCCodeEmitter *llvm::createEUDbeMCCodeEmitter(const MCInstrInfo &MCII,
-                                              const MCRegisterInfo &MRI,
-                                              MCContext &Ctx) {
-  return new EUDMCCodeEmitter(MCII, MRI, false);
-}
 
 unsigned EUDMCCodeEmitter::getMachineOpValue(const MCInst &MI,
                                              const MCOperand &MO,

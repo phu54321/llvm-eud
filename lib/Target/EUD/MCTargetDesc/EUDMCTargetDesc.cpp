@@ -100,7 +100,7 @@ static MCInstrAnalysis *createEUDInstrAnalysis(const MCInstrInfo *Info) {
 
 extern "C" void LLVMInitializeEUDTargetMC() {
   for (Target *T :
-    {&getTheEUDleTarget(), &getTheEUDbeTarget()}) {
+    {&getTheEUDleTarget()}) {
     // Register the MC asm info.
     RegisterMCAsmInfo<EUDMCAsmInfo> X(*T);
 
@@ -127,12 +127,8 @@ extern "C" void LLVMInitializeEUDTargetMC() {
   // Register the MC code emitter
   TargetRegistry::RegisterMCCodeEmitter(getTheEUDleTarget(),
                                         createEUDMCCodeEmitter);
-  TargetRegistry::RegisterMCCodeEmitter(getTheEUDbeTarget(),
-                                        createEUDbeMCCodeEmitter);
 
   // Register the ASM Backend
   TargetRegistry::RegisterMCAsmBackend(getTheEUDleTarget(),
                                        createEUDAsmBackend);
-  TargetRegistry::RegisterMCAsmBackend(getTheEUDbeTarget(),
-                                       createEUDbeAsmBackend);
 }

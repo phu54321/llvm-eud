@@ -1,4 +1,4 @@
-# RUN: llvm-mc -triple eudel -filetype=obj -o %t %s
+# RUN: llvm-mc -triple eud -filetype=obj -o %t %s
 # RUN: llvm-objdump -d -r %t | FileCheck %s
 
 // ======== EUD_ALU Class ========

@@ -1,4 +1,4 @@
-; RUN: not llc -march=eudel < %s 2>&1 >/dev/null | FileCheck %s
+; RUN: not llc -march=eud < %s 2>&1 >/dev/null | FileCheck %s
 
 ;; CHECK-NOT: nowarn
 define void @nowarn() local_unnamed_addr #0 !dbg !6 {

@@ -1,5 +1,5 @@
-; RUN: llc -march=eudel < %s | FileCheck --check-prefix=CHECK-V1 %s
-; RUN: llc -march=eudel -mcpu=v2 < %s | FileCheck --check-prefix=CHECK-V2 %s
+; RUN: llc -march=eud < %s | FileCheck --check-prefix=CHECK-V1 %s
+; RUN: llc -march=eud -mcpu=v2 < %s | FileCheck --check-prefix=CHECK-V2 %s
 
 define i16 @sccweqand(i16 %a, i16 %b) nounwind {
   %t1 = and i16 %a, %b

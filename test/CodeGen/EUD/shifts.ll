@@ -1,4 +1,4 @@
-; RUN: llc < %s -march=eudel -show-mc-encoding | FileCheck %s
+; RUN: llc < %s -march=eud -show-mc-encoding | FileCheck %s
 
 define zeroext i8 @lshr8(i8 zeroext %a, i8 zeroext %cnt) nounwind readnone {
 entry:

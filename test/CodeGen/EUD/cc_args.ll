@@ -1,4 +1,4 @@
-; RUN: llc < %s -march=eudel -show-mc-encoding | FileCheck %s
+; RUN: llc < %s -march=eud -show-mc-encoding | FileCheck %s
 
 define void @test() #0 {
 entry:

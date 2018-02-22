@@ -1,4 +1,4 @@
-; RUN: llc < %s -march=eudel | FileCheck %s
+; RUN: llc < %s -march=eud | FileCheck %s
 
 %struct.eud_context = type { i64, i64, i64, i64, i64, i64, i64 }
 %struct.sk_buff = type { i64, i64, i64, i64, i64, i64, i64 }
