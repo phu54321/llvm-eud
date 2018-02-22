@@ -16,14 +16,13 @@
 ;===------------------------------------------------------------------------===;
 
 [common]
-subdirectories = AsmParser InstPrinter Disassembler MCTargetDesc TargetInfo
+subdirectories = AsmParser InstPrinter MCTargetDesc TargetInfo
 
 [component_0]
 type = TargetGroup
 name = EUD
 parent = Target
 has_asmprinter = 1
-has_disassembler = 1
 
 [component_1]
 type = Library
