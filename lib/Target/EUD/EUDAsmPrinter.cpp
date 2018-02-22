@@ -135,5 +135,4 @@ void EUDAsmPrinter::EmitInstruction(const MachineInstr *MI) {
 extern "C" void LLVMInitializeEUDAsmPrinter() {
   RegisterAsmPrinter<EUDAsmPrinter> X(getTheEUDleTarget());
   RegisterAsmPrinter<EUDAsmPrinter> Y(getTheEUDbeTarget());
-  RegisterAsmPrinter<EUDAsmPrinter> Z(getTheEUDTarget());
 }

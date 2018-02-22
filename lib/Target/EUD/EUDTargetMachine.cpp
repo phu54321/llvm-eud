@@ -26,7 +26,6 @@ extern "C" void LLVMInitializeEUDTarget() {
   // Register the target.
   RegisterTargetMachine<EUDTargetMachine> X(getTheEUDleTarget());
   RegisterTargetMachine<EUDTargetMachine> Y(getTheEUDbeTarget());
-  RegisterTargetMachine<EUDTargetMachine> Z(getTheEUDTarget());
 }
 
 // DataLayout: little or big endian

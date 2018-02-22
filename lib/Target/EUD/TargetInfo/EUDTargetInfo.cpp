@@ -20,16 +20,9 @@ Target &getTheEUDbeTarget() {
   static Target TheEUDbeTarget;
   return TheEUDbeTarget;
 }
-Target &getTheEUDTarget() {
-  static Target TheEUDTarget;
-  return TheEUDTarget;
-}
 } // namespace llvm
 
 extern "C" void LLVMInitializeEUDTargetInfo() {
-  TargetRegistry::RegisterTarget(getTheEUDTarget(), "eud", "EUD (host endian)",
-                                 "EUD", [](Triple::ArchType) { return false; },
-                                 true);
   RegisterTarget<Triple::eudel, /*HasJIT=*/true> X(
       getTheEUDleTarget(), "eudel", "EUD (little endian)", "EUD");
   RegisterTarget<Triple::eudeb, /*HasJIT=*/true> Y(getTheEUDbeTarget(), "eudeb",

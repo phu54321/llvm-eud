@@ -36,7 +36,6 @@ class raw_pwrite_stream;
 
 Target &getTheEUDleTarget();
 Target &getTheEUDbeTarget();
-Target &getTheEUDTarget();
 
 MCCodeEmitter *createEUDMCCodeEmitter(const MCInstrInfo &MCII,
                                       const MCRegisterInfo &MRI,

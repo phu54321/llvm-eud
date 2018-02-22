@@ -56,8 +56,6 @@ static MCDisassembler *createEUDDisassembler(const Target &T,
 
 extern "C" void LLVMInitializeEUDDisassembler() {
   // Register the disassembler.
-  TargetRegistry::RegisterMCDisassembler(getTheEUDTarget(),
-                                         createEUDDisassembler);
   TargetRegistry::RegisterMCDisassembler(getTheEUDleTarget(),
                                          createEUDDisassembler);
   TargetRegistry::RegisterMCDisassembler(getTheEUDbeTarget(),
