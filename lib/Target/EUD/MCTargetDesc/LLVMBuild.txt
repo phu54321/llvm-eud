@@ -19,5 +19,5 @@
 type = Library
 name = EUDDesc
 parent = EUD
-required_libraries = MC EUDAsmPrinter EUDInfo Support
+required_libraries = MC EUDInfo Support
 add_to_library_groups = EUD

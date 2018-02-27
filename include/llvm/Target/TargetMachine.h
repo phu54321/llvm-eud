@@ -202,7 +202,7 @@ public:
     return Options.FunctionSections;
   }
 
-  /// \brief Get a \c TargetIRAnalysis appropriate for the target.
+  virtual /// \brief Get a \c TargetIRAnalysis appropriate for the target.
   ///
   /// This is used to construct the new pass manager's target IR analysis pass,
   /// set up appropriately for this target machine. Even the old pass manager

@@ -12,13 +12,13 @@
 using namespace llvm;
 
 namespace llvm {
-Target &getTheEUDleTarget() {
-  static Target TheEUDleTarget;
-  return TheEUDleTarget;
+Target &getEUDTarget() {
+  static Target EUDTarget;
+  return EUDTarget;
 }
 } // namespace llvm
 
 extern "C" void LLVMInitializeEUDTargetInfo() {
   RegisterTarget<Triple::eud, /*HasJIT=*/true> X(
-    getTheEUDleTarget(), "eud", "EUD (little endian)", "EUD");
+    getEUDTarget(), "eud", "EUD", "EUD");
 }

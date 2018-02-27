@@ -19,7 +19,6 @@
 ; will typically require only insertion of a line.
 [common]
 subdirectories =
- ARM
  BPF
  EUD
  X86

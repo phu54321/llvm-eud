@@ -1,4 +1,4 @@
-//===-- EUDSubtarget.cpp - EUD Subtarget Information ----------------------===//
+//===-- EUDTargetMachine.cpp - Define TargetMachine for the EUD -------------===//
 //
 //                     The LLVM Compiler Infrastructure
 //
@@ -7,49 +7,28 @@
 //
 //===----------------------------------------------------------------------===//
 //
-// This file implements the EUD specific subclass of TargetSubtargetInfo.
+// This file defines the EUD specific subclass of TargetMachine.
 //
 //===----------------------------------------------------------------------===//
 
-#include "EUDSubtarget.h"
-#include "EUD.h"
-#include "llvm/Support/Host.h"
+#include "EUDTargetMachine.h"
+#include "llvm/Analysis/TargetTransformInfo.h"
 #include "llvm/Support/TargetRegistry.h"
-
 using namespace llvm;
 
-#define DEBUG_TYPE "eud-subtarget"
+const llvm::SubtargetFeatureKV EUDSubTypeKV[] = {
+  { "eud", "Select the eud processor", { }, { } }
+};
 
-#define GET_SUBTARGETINFO_TARGET_DESC
-#define GET_SUBTARGETINFO_CTOR
-#include "EUDGenSubtargetInfo.inc"
+static const llvm::SubtargetInfoKV EUDProcSchedModels[] = {
+  { "eud", &MCSchedModel::GetDefaultSchedModel() }
+};
 
-void EUDSubtarget::anchor() {}
+EUDSubtarget::EUDSubtarget(const TargetMachine& TM, const Triple &TT) :
+  TargetSubtargetInfo(
+    TT, "eud", "eud", None, makeArrayRef(EUDSubTypeKV, 1),EUDProcSchedModels,
+    nullptr, nullptr, nullptr, nullptr, nullptr, nullptr),
+  TLInfo(TM)
+{}
 
-EUDSubtarget &EUDSubtarget::initializeSubtargetDependencies(StringRef CPU,
-                                                            StringRef FS) {
-  initializeEnvironment();
-  initSubtargetFeatures(CPU, FS);
-  return *this;
-}
 
-void EUDSubtarget::initializeEnvironment() {
-  HasJmpExt = false;
-}
-
-void EUDSubtarget::initSubtargetFeatures(StringRef CPU, StringRef FS) {
-  if (CPU == "probe")
-    CPU = "generic";
-  if (CPU == "generic" || CPU == "v1")
-    return;
-  if (CPU == "v2") {
-    HasJmpExt = true;
-    return;
-  }
-}
-
-EUDSubtarget::EUDSubtarget(const Triple &TT, const std::string &CPU,
-                           const std::string &FS, const TargetMachine &TM)
-    : EUDGenSubtargetInfo(TT, CPU, FS), InstrInfo(),
-      FrameLowering(initializeSubtargetDependencies(CPU, FS)),
-      TLInfo(TM, *this) {}

@@ -16,7 +16,7 @@
 ;===------------------------------------------------------------------------===;
 
 [common]
-subdirectories = AsmParser InstPrinter MCTargetDesc TargetInfo
+subdirectories = TargetInfo MCTargetDesc
 
 [component_0]
 type = TargetGroup
@@ -29,12 +29,8 @@ type = Library
 name = EUDCodeGen
 parent = EUD
 required_libraries =
- AsmPrinter
  CodeGen
  Core
- MC
- EUDAsmPrinter
- EUDDesc
  EUDInfo
  SelectionDAG
  Support
